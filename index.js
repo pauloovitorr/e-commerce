@@ -13,6 +13,7 @@ fetch('https://api.mercadolibre.com/sites/MLB/search?q=computador')
 function preenche(pcx) {
 
     let divPai = document.querySelector('#produtos')
+    
 
     for(let chave in pcx){
 
@@ -20,7 +21,9 @@ function preenche(pcx) {
 
         let div = `
         <div id="${pc.id}">
+        <img src="${pc.thumbnail}" alt="${pc.title}">
             <p>Titulo: ${pc.title} </p>
+            <p>Detalhes: ${pc.attributes[1].value_name} </p>
             <p>Condição: ${pc.condition}</p>
             <p>Quantidade: ${pc.available_quantity}</p>
             <p>Preço: ${pc.price}</p>
