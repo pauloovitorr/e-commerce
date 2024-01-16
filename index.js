@@ -1,4 +1,4 @@
-fetch('https://api.mercadolibre.com/sites/MLB/search?q=computador')
+fetch('https://api.mercadolibre.com/sites/MLB/search?q=tecnologia')
     .then((dados) => {
         return dados.json()
     })
