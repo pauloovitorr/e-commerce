@@ -20,10 +20,10 @@ function preenche(pcx) {
         let pc = pcx[chave]
 
         let div = `
-        <div id="${pc.id}">
+        <div class="card" id="${pc.id}">
         <img src="${pc.thumbnail}" alt="${pc.title}">
             <p>Titulo: ${pc.title} </p>
-            <p>Detalhes: ${pc.attributes[1].value_name} </p>
+            
             <p>Condição: ${pc.condition}</p>
             <p>Quantidade: ${pc.available_quantity}</p>
             <p>Preço: ${pc.price}</p>
@@ -32,9 +32,6 @@ function preenche(pcx) {
         divPai.innerHTML += div
     }
    
-
-    
-
 }
 
 
