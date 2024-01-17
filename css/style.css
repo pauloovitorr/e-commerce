@@ -55,8 +55,7 @@ body{
 }
 
 .card{
-    width: 270px;
-    height: 285px;
+    width: 280px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -75,7 +74,7 @@ body{
 }
 
 .card div img{
-    width: 100%;
+    width: 130px;
 }
 
 .card div:nth-child(1) {

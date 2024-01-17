@@ -1,18 +1,47 @@
-fetch('https://api.mercadolibre.com/sites/MLB/search?q=notbook')
+
+let buscar = document.getElementById('buscas')
+
+
+window.onload = ()=>{
+
+    if(buscar.value==''){
+        fetch('https://api.mercadolibre.com/sites/MLB/search?q=notbook')
+        .then((dados) => {
+            return dados.json()
+        })
+        .then((x) => {
+             pc = x.results
+    
+            preenche(pc)
+        })
+    }
+}
+
+
+function buscarProduto(){
+
+
+    fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${buscar.value}`)
     .then((dados) => {
         return dados.json()
     })
     .then((x) => {
-         pc = x.results
+         ppc = x.results
 
-        preenche(pc)
+        preenche(ppc)
     })
+}
+
+
+
 
 
 
 function preenche(pcx) {
 
     let divPai = document.querySelector('#produtos')
+
+    divPai.innerHTML =''
     
 
     for(let chave in pcx){
@@ -33,8 +62,9 @@ function preenche(pcx) {
     
         divPai.innerHTML += div
     }
-   
 }
+
+
 
 
 
