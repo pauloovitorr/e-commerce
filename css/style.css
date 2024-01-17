@@ -82,13 +82,20 @@ body{
 }
 
 .card div:nth-child(2) span {
+    color: rgb(23, 153, 228);
     cursor: pointer;
     transition: .5s;
 }
 
 .card div:nth-child(2) span:hover {
-    color: rgb(23, 153, 228);
+    color: rgb(5, 52, 80);
 }
+
+.card div:nth-child(2) p {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
 
 .titulo{
     font-weight: 700;

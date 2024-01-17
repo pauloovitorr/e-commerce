@@ -27,7 +27,6 @@ function buscarProduto(){
     })
     .then((x) => {
          ppc = x.results
-
         preenche(ppc)
     })
 }
@@ -39,6 +38,7 @@ function buscarProduto(){
 
 function preenche(pcx) {
 
+    console.log(pcx)
     let divPai = document.querySelector('#produtos')
 
     divPai.innerHTML =''
@@ -56,7 +56,7 @@ function preenche(pcx) {
 
             <div>
                 <span class="titulo">${pc.title}</span>
-                <p>R$ ${pc.price}</p>
+                <p>${pc.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
             </div>
         </div>`
     
