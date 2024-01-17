@@ -1,4 +1,4 @@
-fetch('https://api.mercadolibre.com/sites/MLB/search?q=tecnologia')
+fetch('https://api.mercadolibre.com/sites/MLB/search?q=notbook')
     .then((dados) => {
         return dados.json()
     })
@@ -21,12 +21,14 @@ function preenche(pcx) {
 
         let div = `
         <div class="card" id="${pc.id}">
-        <img src="${pc.thumbnail}" alt="${pc.title}">
-            <p>Titulo: ${pc.title} </p>
-            
-            <p>Condição: ${pc.condition}</p>
-            <p>Quantidade: ${pc.available_quantity}</p>
-            <p>Preço: ${pc.price}</p>
+            <div>
+                <img src="${pc.thumbnail}" alt="${pc.title}">
+            </div>
+
+            <div>
+                <span class="titulo">${pc.title}</span>
+                <p>R$ ${pc.price}</p>
+            </div>
         </div>`
     
         divPai.innerHTML += div
