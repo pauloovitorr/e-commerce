@@ -69,6 +69,10 @@ body{
     transition: .6s;
 }
 
+.card a{
+    text-decoration: none;
+}
+
 .card:hover{
     box-shadow: 1px 2px 6px 1px rgba(236, 240, 4, 0.89);
 }
@@ -94,6 +98,7 @@ body{
 .card div:nth-child(2) p {
     font-size: 1.3rem;
     font-weight: bold;
+    margin-top: 5px;
 }
 
 

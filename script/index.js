@@ -20,15 +20,30 @@ window.onload = ()=>{
 
 function buscarProduto(){
 
+    let inputBusca = document.getElementById('buscas')
 
-    fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${buscar.value}`)
-    .then((dados) => {
-        return dados.json()
-    })
-    .then((x) => {
-         ppc = x.results
-        preenche(ppc)
-    })
+    if(inputBusca.value!=''){
+
+        fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${buscar.value}`)
+        .then((dados) => {
+            return dados.json()
+        })
+        .then((x) => {
+             ppc = x.results
+            preenche(ppc)
+        })
+    }
+    else{
+
+        fetch(`https://api.mercadolibre.com/sites/MLB/search?q=notbook`)
+        .then((dados) => {
+            return dados.json()
+        })
+        .then((x) => {
+             ppc = x.results
+            preenche(ppc)
+        })
+    }
 }
 
 
@@ -38,8 +53,9 @@ function buscarProduto(){
 
 function preenche(pcx) {
 
-    console.log(pcx)
     let divPai = document.querySelector('#produtos')
+
+    console.log(pcx)
 
     divPai.innerHTML =''
     
@@ -55,7 +71,7 @@ function preenche(pcx) {
             </div>
 
             <div>
-                <span class="titulo">${pc.title}</span>
+            <a href="${pc.permalink}"target="_blank"><span class="titulo">${pc.title}</span></a>
                 <p>${pc.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
             </div>
         </div>`
