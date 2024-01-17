@@ -47,10 +47,6 @@ function buscarProduto(){
 }
 
 
-
-
-
-
 function preenche(pcx) {
 
     let divPai = document.querySelector('#produtos')

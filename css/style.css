@@ -60,13 +60,14 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin: 15px;
-    border: 2px solid rgba(39, 2, 2, 0.199);
+    margin: 8px;
+    /* border: 2px solid rgba(39, 2, 2, 0.199); */
     border-radius: 5px;
     padding: 10px;
     text-align: center;
-    box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.589);
-    transition: .6s;
+    /* box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.589); */
+    transition: 0.4s;
+    /* background-color: #80808017; */
 }
 
 .card a{
@@ -74,7 +75,8 @@ body{
 }
 
 .card:hover{
-    box-shadow: 1px 2px 6px 1px rgba(236, 240, 4, 0.89);
+    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.589);
+    scale: 1.1;
 }
 
 .card div img{
