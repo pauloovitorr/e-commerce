@@ -1,13 +1,17 @@
 export default function Produtos() {
 
-  fetch('https://api.mercadolibre.com/sites/MLB/search?q=notbook')
-  .then((dados) => {
-      return dados.json()
-  })
-  .then((dados)=>{
-    preenche(dados.results)
-  })
+  
+  // fetch('https://api.mercadolibre.com/sites/MLB/search?q=notbook')
+  // .then((dados) => {
+  //     return dados.json()
+  // })
+  // .then((dados)=>{
+  //   preenche(dados.results)
+  // })
  
+ 
+
+  
   function preenche(pcx) {
 
     let divPai = document.querySelector('#produtos')
@@ -36,13 +40,42 @@ export default function Produtos() {
 }
  
 
+function buscarProduto(){
+  let inputBusca = document.getElementById('buscas')
+
+
+  if(inputBusca.value!=''){
+
+    fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${inputBusca.value}`)
+    .then((dados) => {
+        return dados.json()
+    })
+    .then((dados) => {
+      preenche(dados.results)
+    })
+}
+else{
+
+    fetch(`https://api.mercadolibre.com/sites/MLB/search?q=notbook`)
+    .then((dados) => {
+        return dados.json()
+    })
+    .then((dados) => {
+         
+        preenche(dados.results)
+
+    })
+}
+
+}
+
 
   return (
     <main>
 
-      <div class="buscar">
+      <div className="buscar">
         <input type="text" id="buscas" placeholder="Buscar produtos, marcas e muito mais..."/>
-        <img src="./lupa.jpg" alt="pesquisar" onclick="buscarProduto()" />
+        <img src="./lupa.jpg" alt="pesquisar" onClick={buscarProduto} />
       </div>
 
       <div id="produtos">

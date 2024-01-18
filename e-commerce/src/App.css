@@ -65,9 +65,10 @@ body{
   border-radius: 5px;
   padding: 10px;
   text-align: center;
-  /* box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.589); */
+  box-shadow: 0.5px 0.5px 1px 0.5px rgba(0, 0, 0, 0.589); 
   transition: 0.4s;
   /* background-color: #80808017; */
+  border: 1px solid rgba(128, 128, 128, 0.192);
 }
 
 .card a{
