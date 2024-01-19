@@ -59,7 +59,7 @@ body{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin: 10px;
+  margin: 12px;
   /* border: 2px solid rgba(39, 2, 2, 0.199); */
   border-radius: 5px;
   padding: 10px;
@@ -76,7 +76,7 @@ body{
 
 .card:hover{
   box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.589);
-  scale: 1.05;
+  scale: 1.04;
 }
 
 .card div img{
