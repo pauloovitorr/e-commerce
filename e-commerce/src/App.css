@@ -15,7 +15,6 @@ body{
   background-color:#f9e846;
   display: flex;
   align-items: center;
-  
 }
 
 .menu .logo{
@@ -60,7 +59,7 @@ body{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin: 8px;
+  margin: 10px;
   /* border: 2px solid rgba(39, 2, 2, 0.199); */
   border-radius: 5px;
   padding: 10px;
@@ -77,7 +76,7 @@ body{
 
 .card:hover{
   box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.589);
-  scale: 1.1;
+  scale: 1.05;
 }
 
 .card div img{
@@ -133,4 +132,24 @@ body{
 .buscar img{
   width: 50px;
   cursor: pointer;
+}
+
+.carrinho{
+  padding: 7px 15px;
+  width: 35%;
+  background-color: #f9e846;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.carrinho i{
+  color: rgb(87, 84, 84);
+}
+
+.carrinho:hover{
+  border: 1px solid #f9e846;
+  background-color: #ddc703;
 }

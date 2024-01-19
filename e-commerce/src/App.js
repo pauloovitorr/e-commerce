@@ -4,8 +4,6 @@ import Produtos from './componentes/produtos';
 
 function App() {
 
-  
-
   return (
     <div className="App">
       <Nav></Nav>

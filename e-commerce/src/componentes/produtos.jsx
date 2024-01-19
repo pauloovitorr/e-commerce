@@ -1,13 +1,16 @@
+import {useState, useEffect } from "react"
+
 export default function Produtos() {
 
   
-  // fetch('https://api.mercadolibre.com/sites/MLB/search?q=notbook')
-  // .then((dados) => {
-  //     return dados.json()
-  // })
-  // .then((dados)=>{
-  //   preenche(dados.results)
-  // })
+  fetch('https://api.mercadolibre.com/sites/MLB/search?q=notbook')
+  .then((dados) => {
+      return dados.json()
+  })
+  .then((dados)=>{
+    console.log(dados)
+    preenche(dados.results)
+  })
  
  
 
@@ -32,6 +35,7 @@ export default function Produtos() {
             <div>
             <a href="${pc.permalink}"target="_blank"><span class="titulo">${pc.title}</span></a>
                 <p>${pc.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+                <button class="carrinho"> <i class="fa-solid fa-cart-plus"></i> </button>
             </div>
         </div>`
     
@@ -42,7 +46,6 @@ export default function Produtos() {
 
 function buscarProduto(){
   let inputBusca = document.getElementById('buscas')
-
 
   if(inputBusca.value!=''){
 
