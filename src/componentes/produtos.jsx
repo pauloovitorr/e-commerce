@@ -2,17 +2,19 @@ import {useState, useEffect } from "react"
 
 export default function Produtos() {
 
+  const [inicia, Setinicia] = useState('')
+  
   
   fetch('https://api.mercadolibre.com/sites/MLB/search?q=notbook')
   .then((dados) => {
       return dados.json()
   })
   .then((dados)=>{
-    console.log(dados)
-    preenche(dados.results)
+    
+     preenche(dados.results)
+    
   })
- 
- 
+
 
   
   function preenche(pcx) {
