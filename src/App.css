@@ -76,7 +76,7 @@ body{
 
 .card:hover{
   box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.589);
-  scale: 1.04;
+  scale: 1.03;
 }
 
 .card div img{
@@ -135,14 +135,17 @@ body{
 }
 
 .carrinho{
-  padding: 7px 15px;
-  width: 35%;
+  padding: 10px 15px;
+  width: 65%;
   background-color: #f9e846;
   border: 1px solid transparent;
   border-radius: 10px;
   margin-top: 10px;
   cursor: pointer;
   transition: .5s;
+  font-weight: 600;
+  font-size: 1.05rem;
+
 }
 
 .carrinho i{
@@ -150,6 +153,6 @@ body{
 }
 
 .carrinho:hover{
-  border: 1px solid #f9e846;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.363) ;
   background-color: #ddc703;
 }

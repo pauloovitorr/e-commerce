@@ -4,18 +4,20 @@ export default function Produtos() {
 
   const [inicia, Setinicia] = useState('')
   const [busca, Setbusca] = useState('')
+  const [carrinho, Setcarrinho] = useState([])
+  const [dados,Setdados] = useState([])
 
 
   useEffect(() => {
 
-    if (inicia == '') {
+    if (inicia === '') {
       fetch('https://api.mercadolibre.com/sites/MLB/search?q=notbook')
         .then((dados) => {
           return dados.json()
         })
-        .then((dados) => {
+        .then((dados) => { 
 
-          preenche(dados.results)
+          Setdados(dados.results)
         })
     }
     else {
@@ -24,42 +26,19 @@ export default function Produtos() {
           return dados.json()
         })
         .then((dados) => {
-          preenche(dados.results)
+
+          Setdados(dados.results)
+
         })
     }
 
   }, [inicia])
 
+  function gerenciaCarrinho(item){
+      let setItem_carrinho = [...carrinho,item]
 
-
-  function preenche(pcx) {
-
-    let divPai = document.querySelector('#produtos')
-
-    divPai.innerHTML = ''
-
-
-    for (let chave in pcx) {
-
-      let pc = pcx[chave]
-
-      let div = `
-        <div class="card" id="${pc.id}">
-            <div>
-                <img src="${pc.thumbnail}" alt="${pc.title}">
-            </div>
-
-            <div>
-            <a href="${pc.permalink}"target="_blank"><span class="titulo">${pc.title}</span></a>
-                <p>${pc.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
-                <button class="carrinho"> <i class="fa-solid fa-cart-plus"></i> </button>
-            </div>
-        </div>`
-
-      divPai.innerHTML += div
-    }
+      Setcarrinho(setItem_carrinho)
   }
-
 
 
   return (
@@ -71,9 +50,32 @@ export default function Produtos() {
       </div>
 
       <div id="produtos">
-
+      {
+        dados.map((item)=>(
+            
+              <div class="card" id={item.id} >
+                  <div>
+                      <img src={item.thumbnail} alt={item.title}></img>
+                  </div>
+      
+                  <div>
+                      <a href={item.permalink} target="_blank"><span class="titulo">{item.title}</span></a>
+                      <p>{item.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
+                      <button onClick={()=> { gerenciaCarrinho(item) }} class="carrinho">Adicionar <i class="fa-solid fa-cart-plus"></i> </button>
+                  </div>
+              </div>
+        ))
+      }
       </div>
-
+<div>
+  {
+    carrinho.map((dados)=>(
+      <p>{dados.title}</p>
+    ))
+  }
+</div>
+    
+<br /><br /><br /><br />
     </main>
   );
 }

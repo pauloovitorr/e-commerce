@@ -17,7 +17,7 @@ export default function Nav() {
               <a href="#">Home</a>
             </li>
             <li>
-              <a href="#">Home</a>
+              <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
             </li>
           </ul>
         </div>
