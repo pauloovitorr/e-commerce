@@ -11,6 +11,10 @@ export default function Produtos({gerencia}) {
 
 
   useEffect(() => {
+    let lupa = document.querySelector('#lupa')
+    let carrega = document.querySelector('#carregando')
+
+    carrega.style.display='none'
 
     if (inicia === '') {
       fetch('https://api.mercadolibre.com/sites/MLB/search?q=notbook')
@@ -23,6 +27,11 @@ export default function Produtos({gerencia}) {
         })
     }
     else {
+
+      
+      lupa.style.display='none'
+      carrega.style.display='block'
+      
       fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${busca}`)
         .then((dados) => {
           return dados.json()
@@ -30,7 +39,9 @@ export default function Produtos({gerencia}) {
         .then((dados) => {
 
           Setdados(dados.results)
-
+          carrega.style.display='none'
+          lupa.style.display='block'
+          
         })
     }
 
@@ -45,7 +56,8 @@ export default function Produtos({gerencia}) {
 
       <div className="buscar">
         <input type="text" id="buscas" placeholder="Buscar produtos, marcas e muito mais..." onChange={(e) => { Setbusca(e.target.value) }} />
-        <img src="./lupa.jpg" alt="pesquisar" onClick={() => { Setinicia(busca) }} />
+        <img id="lupa" src="./lupa.jpg" alt="pesquisar" onClick={() => { Setinicia(busca) }} />
+        <img src="./carregando.png" id="carregando" alt="carregando" />
       </div>
 
       <div className="produtos">

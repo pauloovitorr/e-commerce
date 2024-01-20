@@ -194,3 +194,23 @@ h1{
   box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.363) ;
   background-color: #ddc703;
 }
+
+.imgCarrinho{
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+#carregando {
+  animation: rodar 2s linear infinite;
+}
+
+@keyframes rodar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

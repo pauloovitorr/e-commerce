@@ -6,7 +6,8 @@ export default function Itens_carrinho({ itens }) {
             <h1>Meu carrinho</h1>
             <div className="produtoss">
 
-                {
+                {itens.length > 0 ?
+
                     itens.map((item) => (
 
                         <div className="card" id={item.id} >
@@ -21,6 +22,10 @@ export default function Itens_carrinho({ itens }) {
                             </div>
                         </div>
                     ))
+                    : <div className="imgCarrinho">
+                        <h2>Sem itens</h2>
+                        <img src="/carrinho.png" alt="Carrinho vazio"></img>
+                    </div>
                 }
 
             </div>
