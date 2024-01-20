@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export default function Nav() {
+export default function Nav({itens}) {
     return (
         <nav className="menu">
             <div className="logo">
@@ -16,7 +16,7 @@ export default function Nav() {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/carrinho"><span id="qtd_carrinho"></span><i class="fa-solid fa-cart-shopping"></i></Link>
+                        <Link to="/carrinho"><span id="qtd_carrinho" >{itens > 0 ? itens : ""}</span><i class="fa-solid fa-cart-shopping"></i></Link>
                     </li>
                 </ul>
             </div>

@@ -48,7 +48,7 @@ export default function Produtos({gerencia}) {
         <img src="./lupa.jpg" alt="pesquisar" onClick={() => { Setinicia(busca) }} />
       </div>
 
-      <div id="produtos">
+      <div className="produtos">
         {
           dados.map((item) => (
 

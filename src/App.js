@@ -2,8 +2,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState} from 'react';
 import './App.css';
 
-import Produtos from './componentes/produtos';
 import Nav from './componentes/nav';
+import Produtos from './componentes/produtos';
+import Itens_carrinho from './componentes/itensCarrinho';
+
 
 function App() {
   const [carrinho, Setcarrinho] = useState([])
@@ -14,20 +16,18 @@ function App() {
     Setcarrinho(setItem_carrinho)
   }
 
-
-
-
   return (
     <div className="App">
 
 
       <Router>
       
-        <Nav></Nav>
+        <Nav itens={carrinho.length}></Nav>
 
         <Routes>
 
           <Route path='/' element={<Produtos gerencia={gerenciaCarrinho}></Produtos>} />
+          <Route path='/carrinho' element={<Itens_carrinho itens={carrinho}></Itens_carrinho>} />
 
         </Routes>
 
