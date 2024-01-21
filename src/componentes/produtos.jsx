@@ -1,20 +1,22 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
 
 
-export default function Produtos({gerencia}) {
+export default function Produtos({ gerencia, categoria }) {
 
   const [inicia, Setinicia] = useState('')
   const [busca, Setbusca] = useState('')
-  
-  const [dados, Setdados] = useState([])
 
+  const [dados, Setdados] = useState([])
+  const [gerencia_cat, Setgerencia_cat] = useState('')
+
+  
 
   useEffect(() => {
     let lupa = document.querySelector('#lupa')
     let carrega = document.querySelector('#carregando')
 
-    carrega.style.display='none'
+    carrega.style.display = 'none'
+
 
     if (inicia === '') {
       fetch('https://api.mercadolibre.com/sites/MLB/search?q=notbook')
@@ -26,12 +28,24 @@ export default function Produtos({gerencia}) {
           Setdados(dados.results)
         })
     }
+    else if (gerencia_cat !== '') {
+
+      fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${gerencia_cat}`)
+        .then((dados) => {
+          return dados.json()
+        })
+        .then((dados) => {
+
+          Setdados(dados.results)
+
+        
+        })
+    }
     else {
 
-      
-      lupa.style.display='none'
-      carrega.style.display='block'
-      
+      lupa.style.display = 'none'
+      carrega.style.display = 'block'
+
       fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${busca}`)
         .then((dados) => {
           return dados.json()
@@ -39,21 +53,24 @@ export default function Produtos({gerencia}) {
         .then((dados) => {
 
           Setdados(dados.results)
-          carrega.style.display='none'
-          lupa.style.display='block'
-          
+          carrega.style.display = 'none'
+          lupa.style.display = 'block'
+
         })
     }
 
+
   }, [inicia])
 
- 
+
 
 
   return (
     <main>
 
-
+      <div className="banner">
+        <img src="/banner.webp" alt="banner" />
+      </div>
       <div className="buscar">
         <input type="text" id="buscas" placeholder="Buscar produtos, marcas e muito mais..." onChange={(e) => { Setbusca(e.target.value) }} />
         <img id="lupa" src="./lupa.jpg" alt="pesquisar" onClick={() => { Setinicia(busca) }} />
@@ -72,7 +89,7 @@ export default function Produtos({gerencia}) {
               <div>
                 <a href={item.permalink} target="_blank"><span class="titulo">{item.title}</span></a>
                 <p>{item.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
-                <button className="carrinho" onClick={(e)=>{ gerencia(item)}}>Adicionar <i class="fa-solid fa-cart-plus"></i> </button>
+                <button className="carrinho" onClick={(e) => { gerencia(item) }}>Adicionar <i class="fa-solid fa-cart-plus"></i> </button>
               </div>
             </div>
           ))

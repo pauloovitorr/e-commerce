@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export default function Nav({itens}) {
+export default function Nav({ itens,categoria }) {
     return (
         <nav className="menu">
             <div className="logo">
@@ -12,8 +12,19 @@ export default function Nav({itens}) {
                     <li>
                         <Link to="/">Home</Link>
                     </li>
-                    <li>
-                        <Link to="/">Home</Link>
+                    <li id="categoria">
+                        <Link to="/" >Categorias</Link>
+                        <div className="drop_Menu">
+                            <p onClick={()=> categoria('Alimentos e Bebidas')}>Alimentos e Bebidas</p>
+                            <p onClick={()=> categoria('Animais')}>Animais</p>
+                            <p onClick={()=> categoria('Beleza e Cuidado Pessoal')}>Beleza e Cuidado Pessoal</p>
+                            <p onClick={()=> categoria('Brinquedos e Hobbies')}>Brinquedos e Hobbies</p>
+                            <p onClick={()=> categoria('Alimentos e Bebidas')}>Alimentos e Bebidas</p>
+                            <p onClick={()=> categoria('Eletrônicos, Áudio e Vídeo')}>Eletrônicos, Áudio e Vídeo</p>
+                            <p onClick={()=> categoria('Esportes e Fitness')}>Esportes e Fitness</p>
+                            <p onClick={()=> categoria('Ferramentas')}>Ferramentas</p>
+                            <p onClick={()=> categoria('Games')}>Games</p>
+                        </div>
                     </li>
                     <li>
                         <Link to="/carrinho"><span id="qtd_carrinho" >{itens > 0 ? itens : ""}</span><i class="fa-solid fa-cart-shopping"></i></Link>
