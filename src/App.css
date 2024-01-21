@@ -51,11 +51,16 @@ h1{
 }
 
 #qtd_carrinho{
-  color: rgb(24, 130, 230);
+  color: white;
   position: relative;
-  top: -19px;
-  right: -22px;
-  font-weight: 700;
+  top: -15px;
+  right: -5px;
+  font-weight: 600;
+  border: 1px solid red;
+  background-color: red;
+  border-radius: 50%;
+  padding: 0px 5px;
+  font-size: 16px;
 }
 
 .produtos{

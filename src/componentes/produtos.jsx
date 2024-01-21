@@ -7,6 +7,7 @@ export default function Produtos({ gerencia, categoria }) {
   const [busca, Setbusca] = useState('')
 
   const [dados, Setdados] = useState([])
+
   const [gerencia_cat, Setgerencia_cat] = useState('')
   const [gerencia_cat2, Setgerencia_cat2] = useState('')
 
@@ -58,7 +59,6 @@ export default function Produtos({ gerencia, categoria }) {
 
   useEffect(()=>{
    
-
     if(busca ===''){
       Setgerencia_cat(categoria)
 
@@ -67,10 +67,10 @@ export default function Produtos({ gerencia, categoria }) {
         Setinicia(gerencia_cat)
       }
   
-
     }
     console.log('Categoria1:',gerencia_cat,'Categoria2:',gerencia_cat2,  " Inicia:",inicia)
   })
+
 
   function gerencia_Busca(){
     Setinicia(busca)

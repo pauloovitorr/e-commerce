@@ -27,7 +27,7 @@ export default function Nav({ itens,categoria }) {
                         </div>
                     </li>
                     <li>
-                        <Link to="/carrinho"><span id="qtd_carrinho" >{itens > 0 ? itens : ""}</span><i class="fa-solid fa-cart-shopping"></i></Link>
+                        <Link to="/carrinho">{itens > 0 ? <span id="qtd_carrinho">{itens}</span> : ""}<i class="fa-solid fa-cart-shopping"></i></Link>
                     </li>
                 </ul>
             </div>
