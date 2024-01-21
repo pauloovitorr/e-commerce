@@ -8,6 +8,7 @@ export default function Produtos({ gerencia, categoria }) {
 
   const [dados, Setdados] = useState([])
   const [gerencia_cat, Setgerencia_cat] = useState('')
+  const [gerencia_cat2, Setgerencia_cat2] = useState('')
 
 
 
@@ -56,13 +57,29 @@ export default function Produtos({ gerencia, categoria }) {
 
 
   useEffect(()=>{
-    Setgerencia_cat(categoria)
-    
-    if(gerencia_cat!==''){
-      Setinicia(gerencia_cat)
+   
+
+    if(busca ===''){
+      Setgerencia_cat(categoria)
+
+      if(gerencia_cat !== gerencia_cat2){
+        Setgerencia_cat2(gerencia_cat)
+        Setinicia(gerencia_cat)
+      }
+  
+
     }
+    console.log('Categoria1:',gerencia_cat,'Categoria2:',gerencia_cat2,  " Inicia:",inicia)
   })
 
+  function gerencia_Busca(){
+    Setinicia(busca)
+    
+    let input_busca = document.querySelector('#buscas')
+    input_busca.value=''
+    Setbusca('')
+  
+  }
 
 
   return (
@@ -73,7 +90,7 @@ export default function Produtos({ gerencia, categoria }) {
       </div>
       <div className="buscar">
         <input type="text" id="buscas" placeholder="Buscar produtos, marcas e muito mais..." onChange={(e) => { Setbusca(e.target.value) }} />
-        <img id="lupa" src="./lupa.jpg" alt="pesquisar" onClick={() => { Setinicia(busca) }} />
+        <img id="lupa" src="./lupa.jpg" alt="pesquisar" onClick={() => { gerencia_Busca() }} />
         <img src="./carregando.png" id="carregando" alt="carregando" />
       </div>
 
