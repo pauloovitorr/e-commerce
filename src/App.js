@@ -10,13 +10,12 @@ import Itens_carrinho from './componentes/itensCarrinho';
 function App() {
   const [carrinho, Setcarrinho] = useState([])
   const [categoria,Setcategoria] = useState('')
-
+ 
   function gerenciaCarrinho(item) {
     let setItem_carrinho = [...carrinho, item]
 
     Setcarrinho(setItem_carrinho)
   }
-
 
   return (
     <div className="App">

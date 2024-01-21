@@ -9,13 +9,17 @@ export default function Produtos({ gerencia, categoria }) {
   const [dados, Setdados] = useState([])
   const [gerencia_cat, Setgerencia_cat] = useState('')
 
-  
+
+
+
 
   useEffect(() => {
     let lupa = document.querySelector('#lupa')
     let carrega = document.querySelector('#carregando')
 
     carrega.style.display = 'none'
+
+    
 
 
     if (inicia === '') {
@@ -28,25 +32,11 @@ export default function Produtos({ gerencia, categoria }) {
           Setdados(dados.results)
         })
     }
-    else if (gerencia_cat !== '') {
-
-      fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${gerencia_cat}`)
-        .then((dados) => {
-          return dados.json()
-        })
-        .then((dados) => {
-
-          Setdados(dados.results)
-
-        
-        })
-    }
-    else {
-
+    else{
       lupa.style.display = 'none'
       carrega.style.display = 'block'
 
-      fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${busca}`)
+      fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${inicia}`)
         .then((dados) => {
           return dados.json()
         })
@@ -57,11 +47,21 @@ export default function Produtos({ gerencia, categoria }) {
           lupa.style.display = 'block'
 
         })
+
     }
 
+   
 
   }, [inicia])
 
+
+  useEffect(()=>{
+    Setgerencia_cat(categoria)
+    
+    if(gerencia_cat!==''){
+      Setinicia(gerencia_cat)
+    }
+  })
 
 
 
