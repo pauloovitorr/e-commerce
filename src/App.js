@@ -13,8 +13,15 @@ function App() {
  
   function gerenciaCarrinho(item) {
     let setItem_carrinho = [...carrinho, item]
-
     Setcarrinho(setItem_carrinho)
+
+    let flash = document.querySelector('.flash_msg')
+
+    flash.style.opacity = '1'
+
+    setTimeout(()=>{
+      flash.style.opacity = '0'
+    },2000)
   }
 
   return (

@@ -113,6 +113,10 @@ export default function Produtos({ gerencia, categoria }) {
         }
       </div>
 
+      <div className="flash_msg">
+        <p>Produto adicionado ao carinho</p>
+      </div>
+
 
     </main>
   );
