@@ -271,3 +271,26 @@ h1{
   transition: .5s;
 }
 
+.prod{
+  width: 80%;
+  height: 70vh;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-around;
+}
+
+.descricao{
+  margin-top: 40px;
+  width: 60%;
+}
+
+.descricao div p{
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+.descricao span{
+  font-weight: 800;
+}

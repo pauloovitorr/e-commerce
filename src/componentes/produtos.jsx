@@ -45,7 +45,7 @@ export default function Produtos({ gerencia, categoria, produto }) {
         })
         .then((dados) => {
 
-          console.log(dados.results)
+          console.log(dados)
           Setdados(dados.results)
           carrega.style.display = 'none'
           lupa.style.display = 'block'

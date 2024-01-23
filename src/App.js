@@ -5,6 +5,7 @@ import './App.css';
 import Nav from './componentes/nav';
 import Produtos from './componentes/produtos';
 import Itens_carrinho from './componentes/itensCarrinho';
+import Especifico from './componentes/detalhe';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
 
           <Route path='/' element={<Produtos gerencia={gerenciaCarrinho} categoria={categoria} produto={Setproduto}></Produtos>} />
           <Route path='/carrinho' element={<Itens_carrinho itens={carrinho}></Itens_carrinho>} />
+          <Route path='/produto' element={<Especifico dado = {produto}></Especifico>} />
 
         </Routes>
 
