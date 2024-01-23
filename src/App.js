@@ -10,6 +10,7 @@ import Itens_carrinho from './componentes/itensCarrinho';
 function App() {
   const [carrinho, Setcarrinho] = useState([])
   const [categoria,Setcategoria] = useState('')
+  const [produto, Setproduto] = useState('')
  
   function gerenciaCarrinho(item) {
     let setItem_carrinho = [...carrinho, item]
@@ -24,6 +25,7 @@ function App() {
     },2000)
   }
 
+
   return (
     <div className="App">
 
@@ -34,7 +36,7 @@ function App() {
 
         <Routes>
 
-          <Route path='/' element={<Produtos gerencia={gerenciaCarrinho} categoria={categoria}></Produtos>} />
+          <Route path='/' element={<Produtos gerencia={gerenciaCarrinho} categoria={categoria} produto={Setproduto}></Produtos>} />
           <Route path='/carrinho' element={<Itens_carrinho itens={carrinho}></Itens_carrinho>} />
 
         </Routes>

@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 
-export default function Produtos({ gerencia, categoria }) {
+export default function Produtos({ gerencia, categoria, produto }) {
 
   const [inicia, Setinicia] = useState('')
   const [busca, Setbusca] = useState('')
@@ -44,6 +45,7 @@ export default function Produtos({ gerencia, categoria }) {
         })
         .then((dados) => {
 
+          console.log(dados.results)
           Setdados(dados.results)
           carrega.style.display = 'none'
           lupa.style.display = 'block'
@@ -68,7 +70,6 @@ export default function Produtos({ gerencia, categoria }) {
       }
   
     }
-    console.log('Categoria1:',gerencia_cat,'Categoria2:',gerencia_cat2,  " Inicia:",inicia)
   })
 
 
@@ -104,9 +105,9 @@ export default function Produtos({ gerencia, categoria }) {
               </div>
 
               <div>
-                <a href={item.permalink} target="_blank"><span class="titulo">{item.title}</span></a>
+                <Link to='/produto' onClick={()=> {produto(item)}}><span class="titulo">{item.title}</span></Link>
                 <p>{item.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
-                <button className="carrinho" onClick={(e) => { gerencia(item) }}>Adicionar <i class="fa-solid fa-cart-plus"></i> </button>
+                <button className="carrinho" onClick={() => { gerencia(item) }}>Adicionar <i class="fa-solid fa-cart-plus"></i> </button>
               </div>
             </div>
           ))
