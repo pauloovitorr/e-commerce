@@ -1,4 +1,6 @@
-export default function Itens_carrinho({ itens }) {
+import { Link } from "react-router-dom"
+
+export default function Itens_carrinho({ itens, produto }) {
     return (
 
         <div>
@@ -16,7 +18,7 @@ export default function Itens_carrinho({ itens }) {
                             </div>
 
                             <div>
-                                <a href={item.permalink} target="_blank"><span class="titulo">{item.title}</span></a>
+                                <Link to='/produto' onClick={()=> {produto(item)}}><span class="titulo">{item.title}</span></Link>
                                 <p>{item.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
                                 <button className="carrinho">Adicionar <i class="fa-solid fa-cart-plus"></i> </button>
                             </div>

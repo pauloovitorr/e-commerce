@@ -107,7 +107,7 @@ export default function Produtos({ gerencia, categoria, produto }) {
               <div>
                 <Link to='/produto' onClick={()=> {produto(item)}}><span class="titulo">{item.title}</span></Link>
                 <p>{item.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
-                <button className="carrinho" onClick={() => { gerencia(item) }}>Adicionar <i class="fa-solid fa-cart-plus"></i> </button>
+                <button className="carrinho" onClick={() => { gerencia(item) }}>Adicionar <i class="fa-solid fa-cart-plus"></i></button>
               </div>
             </div>
           ))
