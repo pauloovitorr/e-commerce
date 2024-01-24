@@ -273,12 +273,18 @@ h1{
 
 .prod{
   width: 80%;
-  height: 70vh;
   margin: 0 auto;
+  margin-bottom: 60px;
   margin-top: 30px;
-  border: 2px solid black;
+  border: 2px solid rgba(0, 0, 0, 0.24);
+  border-radius: 5px;
+  padding: 10px 0px;
   display: flex;
   justify-content: space-around;
+}
+
+.prod img{
+  margin-top: 15px;
 }
 
 .descricao{
@@ -288,7 +294,7 @@ h1{
 
 .descricao div p{
   margin: 10px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .descricao span{

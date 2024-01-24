@@ -39,7 +39,7 @@ function App() {
 
           <Route path='/' element={<Produtos gerencia={gerenciaCarrinho} categoria={categoria} produto={Setproduto}></Produtos>} />
           <Route path='/carrinho' element={<Itens_carrinho itens={carrinho}></Itens_carrinho>} />
-          <Route path='/produto' element={<Especifico dado = {produto}></Especifico>} />
+          <Route path='/produto' element={<Especifico gerencia={gerenciaCarrinho} dado = {produto}></Especifico>} />
 
         </Routes>
 
