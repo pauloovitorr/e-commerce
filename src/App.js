@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState} from 'react';
+import { useEffect, useState} from 'react';
 import './App.css';
 
 import Nav from './componentes/nav';
@@ -9,8 +9,10 @@ import Especifico from './componentes/detalhe';
 
 
 function App() {
+
   const [carrinho, Setcarrinho] = useState([])
   const [categoria,Setcategoria] = useState('')
+  const [preco_categoria,SetPreco_categoria] = useState('')
   const [produto, Setproduto] = useState('')
  
   function gerenciaCarrinho(item) {
@@ -25,6 +27,7 @@ function App() {
       flash.style.opacity = '0'
     },2000)
   }
+
 
 
   return (

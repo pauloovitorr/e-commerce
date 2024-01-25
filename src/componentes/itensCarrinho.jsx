@@ -21,7 +21,7 @@ export default function Itens_carrinho({ itens, produto }) {
                             <div>
                                 <Link to='/produto' onClick={() => { produto(item) }}><span class="titulo">{item.title}</span></Link>
                                 <p>{item.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
-                                <button className="carrinho">Remover <i class="fa-solid fa-cart-plus"></i> </button>
+                                <button className="remove">Remover <i class="fa-solid fa-trash"></i> </button>
                             </div>
                         </div>
                     ))
@@ -40,9 +40,12 @@ export default function Itens_carrinho({ itens, produto }) {
                                 <img src={prod.thumbnail} alt={prod.title}></img>
                                 <p>{prod.title}</p>
                                 <p>{prod.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
+                                
                             </div>
+                        
                         ))
                     }
+                    
                 </div> : ''
             }
         </div>
