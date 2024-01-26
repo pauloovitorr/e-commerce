@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom"
 
 export default function Itens_carrinho({ itens, produto }) {
+
+    let valor = 0
+
+itens.forEach(element => {
+    valor+=element.price
+})
+
+
+
     return (
 
         <div className="container_carrinho">
@@ -37,7 +46,8 @@ export default function Itens_carrinho({ itens, produto }) {
                     {
                         itens.map((prod) => (
                             <div className="conta">
-                                <img src={prod.thumbnail} alt={prod.title}></img>
+
+                                <img src={prod.thumbnail} width='100px' height='110px' alt={prod.title}></img>
                                 <p>{prod.title}</p>
                                 <p>{prod.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
                                 
@@ -45,6 +55,11 @@ export default function Itens_carrinho({ itens, produto }) {
                         
                         ))
                     }
+
+                    <hr />
+
+                <p className="valor_total">{valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
+
                     
                 </div> : ''
             }

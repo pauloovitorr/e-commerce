@@ -77,9 +77,10 @@ h1{
 }
 
 .produtoss{
-  width: 68%;
+  width: 50%;
   margin: 0 auto;
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 50px; 
   margin-bottom: 80px;
@@ -274,6 +275,7 @@ h1{
 
 .container_carrinho{
   display: flex;
+  justify-content: space-around;
 
 }
 
@@ -334,6 +336,14 @@ h1{
 .descricao{
   margin-top: 40px;
   width: 60%;
+}
+
+.valor_total{
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color:rgb(23, 153, 228);
+  margin: 15px
 }
 
 .descricao div p{
