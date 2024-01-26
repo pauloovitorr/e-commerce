@@ -52,15 +52,10 @@ itens.forEach(element => {
                                 <p>{prod.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
                                 
                             </div>
-                        
                         ))
                     }
-
                     <hr />
-
                 <p className="valor_total">{valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
-
-                    
                 </div> : ''
             }
         </div>
