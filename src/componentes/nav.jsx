@@ -4,7 +4,7 @@ export default function Nav({ itens,categoria }) {
     return (
         <nav className="menu">
             <div className="logo">
-                <img src="./logo.jpeg" width="225px" height="120px" alt="mercado livre" />
+                <Link to="/"><img src="./logo.jpeg" width="225px" height="120px" alt="mercado livre" /></Link>
             </div>
 
             <div className="menu_Opcoes">
