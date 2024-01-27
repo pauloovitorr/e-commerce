@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import './App.css';
 
 import Nav from './componentes/nav';
@@ -29,10 +29,8 @@ function App() {
 
   function remove_Carrinho(id){
   
-    let lista_remove = carrinho
+    let lista_remove = [...carrinho]
     lista_remove.pop(id)
-
-    console.log(lista_remove)
     Setcarrinho(lista_remove)
   }
 
