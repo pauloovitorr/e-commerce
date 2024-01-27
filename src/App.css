@@ -119,6 +119,36 @@ h1{
   border: 1px solid transparent;
   border-radius: 5px;
   margin-top: 8px;
+  cursor: pointer;
+}
+
+.btn_finaliza{
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  background-color: green;
+  color: white;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.btn_finaliza:hover{
+  background-color: rgb(10, 202, 10);
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 2px 1px black;
+}
+
+.finaliza{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes blur{
@@ -306,8 +336,7 @@ h1{
 }
 
 .container_carrinho{
-  display: flex;
-  justify-content: space-around;
+ display: flex;
 }
 
 

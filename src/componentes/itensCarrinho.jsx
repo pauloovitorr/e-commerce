@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export default function Itens_carrinho({ itens, produto }) {
+export default function Itens_carrinho({ itens, produto , remove}) {
 
     let valor = 0
 
@@ -20,9 +20,9 @@ itens.forEach(element => {
 
                 {itens.length > 0 ?
 
-                    itens.map((item) => (
+                    itens.map((item, indice) => (
 
-                        <div className="card" id={item.id} >
+                        <div className="card" id={indice} >
                             <div>
                                 <img src={item.thumbnail} alt={item.title}></img>
                             </div>
@@ -30,7 +30,7 @@ itens.forEach(element => {
                             <div>
                                 <Link to='/produto' onClick={() => { produto(item) }}><span class="titulo">{item.title}</span></Link>
                                 <p>{item.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
-                                <button className="remove">Remover <i class="fa-solid fa-trash"></i> </button>
+                                <button className="remove" onClick={()=> {remove(indice)}}>Remover <i class="fa-solid fa-trash"></i> </button>
                             </div>
                         </div>
                     ))
@@ -55,7 +55,11 @@ itens.forEach(element => {
                         ))
                     }
                     <hr />
-                <p className="valor_total">{valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
+                <div className="finaliza">
+                    <p className="valor_total">{valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
+                    <button className="btn_finaliza"> Finalizar <i class="fa-solid fa-check"></i> </button>
+                </div>
+
                 </div> : ''
             }
         </div>

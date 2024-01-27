@@ -23,7 +23,7 @@ export default function Nav({ itens,categoria }) {
                             <p onClick={()=> categoria('Eletrônicos, Áudio e Vídeo')}>Eletrônicos, Áudio e Vídeo</p>
                             <p onClick={()=> categoria('Esportes e Fitness')}>Esportes e Fitness</p>
                             <p onClick={()=> categoria('Ferramentas')}>Ferramentas</p>
-                            <p onClick={()=> categoria('Games')}>Games</p>
+                            <p onClick={()=> categoria('Video games e jogos')}>Games</p>
                         </div>
                     </li>
                     <li>
