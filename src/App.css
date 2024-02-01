@@ -395,6 +395,10 @@ h1{
  }
 
  .menu_Opcoes li{
-  font-size: 0.9rem;
+  font-size: 0.5rem;
+ }
+
+ .flash_msg{
+  width: 60%;
  }
 }
