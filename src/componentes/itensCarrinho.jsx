@@ -8,10 +8,6 @@ itens.forEach(element => {
     valor+=element.price
 })
 
-
-
-
-
     return (
 
         <div className="container_carrinho">
@@ -24,15 +20,14 @@ itens.forEach(element => {
 
                     itens.map((item, indice) => (
 
-                        <div className="cardd" id={indice} >
+                        <div className="cardd">
                             <div>
                                 <img src={item.thumbnail} alt={item.title}></img>
                             </div>
-
                             <div>
                                 <Link to='/produto' onClick={() => { produto(item) }}><span class="titulo">{item.title}</span></Link>
                                 <p>{item.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
-                                <button className="remove" onClick={()=>{remove(indice)}}>Remover <i class="fa-solid fa-trash"></i> </button>
+                                <button className="remove" onClick={()=>{remove(indice)}}>Remover <i class="fa-solid fa-trash"></i></button>
                             </div>
                         </div>
                     ))

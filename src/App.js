@@ -29,9 +29,15 @@ function App() {
   }
 
   function remove_Carrinho(id){
-  
+
     let lista_remove = [...carrinho]
-    lista_remove.pop(id)
+
+    lista_remove.splice(id,1)
+
+    console.log(lista_remove)
+    console.log(id)
+
+    
     Setcarrinho(lista_remove)
   }
 

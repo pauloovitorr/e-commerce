@@ -183,17 +183,22 @@ h1{
 
 .cardd{
   width: 280px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin: 12px;
+  margin: 10px;
   border-radius: 5px;
   padding: 10px;
   text-align: center;
   box-shadow: 0.5px 0.5px 1px 0.5px rgba(0, 0, 0, 0.589); 
   transition: 0.5s;
   border: 1px solid rgba(128, 128, 128, 0.192);
+}
+
+.cardd img{
+  width: 50%;
 }
 
 .cardd a{
