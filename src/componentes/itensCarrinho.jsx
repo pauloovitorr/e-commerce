@@ -59,7 +59,7 @@ itens.forEach(element => {
                     <hr />
                 <div className="finaliza">
                     <p className="valor_total">{valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
-                    <button className="btn_finaliza"> Finalizar <i class="fa-solid fa-check"></i> </button>
+                    <button className="btn_finaliza" onClick={alert('Compra finalizada com sucesso!')}> Finalizar <i class="fa-solid fa-check"></i> </button>
                 </div>
 
                 </div> : ''
