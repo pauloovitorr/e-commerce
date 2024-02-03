@@ -24,7 +24,7 @@ itens.forEach(element => {
 
                     itens.map((item, indice) => (
 
-                        <div className="card" id={indice} >
+                        <div className="cardd" id={indice} >
                             <div>
                                 <img src={item.thumbnail} alt={item.title}></img>
                             </div>

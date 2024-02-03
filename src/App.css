@@ -181,6 +181,31 @@ h1{
   border: 1px solid rgba(128, 128, 128, 0.192);
 }
 
+.cardd{
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 12px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0.5px 0.5px 1px 0.5px rgba(0, 0, 0, 0.589); 
+  transition: 0.5s;
+  border: 1px solid rgba(128, 128, 128, 0.192);
+}
+
+.cardd a{
+  text-decoration: none;
+  color: black;
+}
+.cardd:hover{
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.589);
+  scale: 1.03;
+}
+
+
 .card a{
   text-decoration: none;
 }
@@ -394,17 +419,57 @@ h1{
 }
 
 
-@media (max-width:880px) {
+@media (max-width:550px) {
  .logo img{
   width: 130px;
   height: 80px;
  }
 
- .menu_Opcoes li{
-  font-size: 0.5rem;
+ .menu ul li a{
+  font-size: 1.1rem;
  }
 
  .flash_msg{
   width: 60%;
  }
+
+ .banner{
+  width: 80%;
+ }
+ .buscar{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+ }
+
+ .cardd{
+  display: none;
+ }
+
+ .preco{
+  width: 80%;
+  position: absolute;
+  right: 10%;
+ }
+
+ .prod{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 5px;
+ }
+
+ .descricao{
+  width: 98%;
+  margin: 0 auto;
+ }
+
+ .descricao h2{
+  font-size: 1.1rem;
+ }
+
+ .descricao div p{
+  font-size: 0.9rem;
+ }
 }
+
