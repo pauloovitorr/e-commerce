@@ -429,7 +429,7 @@ h1{
 }
 
 footer{
-  margin-top: 100px;
+  margin-top: 130px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -513,6 +513,10 @@ footer a{
 
  .descricao div p{
   font-size: 0.9rem;
+ }
+
+ .rodape{
+  display: none;
  }
 }
 
