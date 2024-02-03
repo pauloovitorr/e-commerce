@@ -10,19 +10,21 @@ export default function Nav({ itens,categoria }) {
             <div className="menu_Opcoes">
                 <ul>
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link to='/'>Home</Link>
                     </li>
+    
                     <li id="categoria">
                         <Link to="/" >Categorias</Link>
                         <div className="drop_Menu">
-                            <p onClick={()=> categoria('Alimentos e Bebidas')}>Alimentos e Bebidas</p>
                             <p onClick={()=> categoria('Animais')}>Animais</p>
+                            <p onClick={()=> categoria('Arte, Papelaria e Armarinho')}>Arte, Papelaria e Armarinho</p>
                             <p onClick={()=> categoria('Beleza e Cuidado Pessoal')}>Beleza e Cuidado Pessoal</p>
                             <p onClick={()=> categoria('Brinquedos e Hobbies')}>Brinquedos e Hobbies</p>
-                            <p onClick={()=> categoria('Alimentos e Bebidas')}>Alimentos e Bebidas</p>
-                            <p onClick={()=> categoria('Eletrônicos, Áudio e Vídeo')}>Eletrônicos, Áudio e Vídeo</p>
-                            <p onClick={()=> categoria('Esportes e Fitness')}>Esportes e Fitness</p>
-                            <p onClick={()=> categoria('Ferramentas')}>Ferramentas</p>
+                            <p onClick={()=> categoria('Calçados, Roupas e Bolsas')}>Calçados, Roupas e Bolsas</p>
+                            <p onClick={()=> categoria('Carros, Motos e Outros')}>Carros, Motos e Outros</p>
+                            <p onClick={()=> categoria('Celulares e Telefones')}>Celulares e Telefones</p>
+                            <p onClick={()=> categoria('Eletrodomésticos')}>Eletrodomésticos</p>
+                            <p onClick={()=> categoria('Livros, Revistas e Comics')}>Livros, Revistas e Comics</p>
                             <p onClick={()=> categoria('Video games e jogos')}>Games</p>
                         </div>
                     </li>
