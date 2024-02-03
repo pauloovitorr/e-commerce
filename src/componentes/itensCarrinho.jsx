@@ -22,7 +22,7 @@ itens.forEach(element => {
 
                         <div className="cardd">
                             <div>
-                                <img src={item.thumbnail} alt={item.title}></img>
+                                <img className="imgCar" src={item.thumbnail} alt={item.title}></img>
                             </div>
                             <div>
                                 <Link to='/produto' onClick={() => { produto(item) }}><span class="titulo">{item.title}</span></Link>
