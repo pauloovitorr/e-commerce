@@ -22,7 +22,7 @@ export default function Produtos({ gerencia, categoria, produto }) {
 
     carrega.style.display = 'none'
 
-    
+
 
 
     if (inicia === '') {
@@ -35,7 +35,7 @@ export default function Produtos({ gerencia, categoria, produto }) {
           Setdados(dados.results)
         })
     }
-    else{
+    else {
       lupa.style.display = 'none'
       carrega.style.display = 'block'
 
@@ -54,71 +54,78 @@ export default function Produtos({ gerencia, categoria, produto }) {
 
     }
 
-   
+
 
   }, [inicia])
 
 
-  useEffect(()=>{
-   
-    if(busca ===''){
+  useEffect(() => {
+
+    if (busca === '') {
       Setgerencia_cat(categoria)
 
-      if(gerencia_cat !== gerencia_cat2){
+      if (gerencia_cat !== gerencia_cat2) {
         Setgerencia_cat2(gerencia_cat)
         Setinicia(gerencia_cat)
       }
-  
+
     }
   })
 
 
-  function gerencia_Busca(){
+  function gerencia_Busca() {
     Setinicia(busca)
-    
+
     let input_busca = document.querySelector('#buscas')
-    input_busca.value=''
+    input_busca.value = ''
     Setbusca('')
-  
+
   }
 
 
   return (
-    <main>
+    <>
+      <main>
 
-      <div className="banner">
-        <img src="/banner.webp" alt="banner" />
-      </div>
-      <div className="buscar">
-        <input type="text" id="buscas" placeholder="Buscar produtos, marcas e muito mais..." onChange={(e) => { Setbusca(e.target.value) }} />
-        <img id="lupa" src="./lupa.jpg" alt="pesquisar" onClick={() => { gerencia_Busca() }} />
-        <img src="./carregando.png" id="carregando" alt="carregando" />
-      </div>
+        <div className="banner">
+          <img src="/banner.webp" alt="banner" />
+        </div>
+        <div className="buscar">
+          <input type="text" id="buscas" placeholder="Buscar produtos, marcas e muito mais..." onChange={(e) => { Setbusca(e.target.value) }} />
+          <img id="lupa" src="./lupa.jpg" alt="pesquisar" onClick={() => { gerencia_Busca() }} />
+          <img src="./carregando.png" id="carregando" alt="carregando" />
+        </div>
 
-      <div className="produtos">
-        {
-          dados.map((item) => (
+        <div className="produtos">
+          {
+            dados.map((item) => (
 
-            <div className="card" id={item.id} >
-              <div>
-                <img src={item.thumbnail} alt={item.title}></img>
+              <div className="card" id={item.id} >
+                <div>
+                  <img src={item.thumbnail} alt={item.title}></img>
+                </div>
+
+                <div>
+                  <Link to='/produto' onClick={() => { produto(item) }}><span class="titulo">{item.title}</span></Link>
+                  <p>{item.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
+                  <button className="carrinho" onClick={() => { gerencia(item) }}>Adicionar <i class="fa-solid fa-cart-plus"></i></button>
+                </div>
               </div>
+            ))
+          }
+        </div>
 
-              <div>
-                <Link to='/produto' onClick={()=> {produto(item)}}><span class="titulo">{item.title}</span></Link>
-                <p>{item.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
-                <button className="carrinho" onClick={() => { gerencia(item) }}>Adicionar <i class="fa-solid fa-cart-plus"></i></button>
-              </div>
-            </div>
-          ))
-        }
-      </div>
+        <div className="flash_msg">
+          <p>Produto adicionado ao carinho</p>
+        </div>
+      </main>
 
-      <div className="flash_msg">
-        <p>Produto adicionado ao carinho</p>
-      </div>
-
-
-    </main>
+      <footer>
+        <p>Copyright 2024</p>
+        <p>Autor do projeto: Paulo Vitor</p>
+        <p><a href="https://www.linkedin.com/in/paulo-vitor-b98332253/" target="_blank">Linkedin do autor</a></p>
+        <p>Projeto desenvolvido com API do mercado Livre</p>
+      </footer>
+    </>
   );
 }

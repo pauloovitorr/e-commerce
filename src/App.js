@@ -6,7 +6,7 @@ import Nav from './componentes/nav';
 import Produtos from './componentes/produtos';
 import Itens_carrinho from './componentes/itensCarrinho';
 import Especifico from './componentes/detalhe';
-import Rodape from './componentes/footer';
+
 
 
 function App() {
@@ -59,8 +59,7 @@ function App() {
 
         </Routes>
 
-          <Rodape></Rodape>
-
+          
       </Router>
 
     </div>

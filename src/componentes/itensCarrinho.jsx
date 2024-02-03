@@ -9,7 +9,7 @@ itens.forEach(element => {
 })
 
     return (
-
+        <>
         <div className="container_carrinho">
 
 
@@ -60,5 +60,6 @@ itens.forEach(element => {
                 </div> : ''
             }
         </div>
+        </>
     )
 }
